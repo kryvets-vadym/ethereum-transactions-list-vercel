@@ -15,6 +15,7 @@ export const initDb = async () => {
     const lastBlockNumber = parseInt(await getLatestBlockNumber(), 16);
 
     if (dbTransactionsCount === 0) {
+      console.log('DB init start!');
       await loadBlocks({
         count: 0,
         number: lastBlockNumber,
