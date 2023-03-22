@@ -1,5 +1,6 @@
 
 # compiled output
+/client/.next
 /dist
 /node_modules
 server/node_modules

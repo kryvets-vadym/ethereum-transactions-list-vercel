@@ -6,6 +6,8 @@ import {
   loadBlocks
 } from './services/blockService.js';
 import { getTransactionDate, getTransactionGas } from './services/transactionsSrvice.js';
+import mongoose from 'mongoose';
+import config from './config/config.js';
 
 export const initDb = async () => {
   try {
@@ -54,6 +56,21 @@ export const saveData = async (blocksNumbers: number[], lastBlockNumber: number)
       await blockDto.save();
     });
     await Promise.all(promises);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const connectDb = async () => {
+  try {
+    await mongoose
+      .connect(config.DB_URL)
+      .then(async () => {
+        console.log('⚡️[database]: Connected to database');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   } catch (e) {
     console.log(e);
   }
