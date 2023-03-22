@@ -1,0 +1,19 @@
+@config "../tailwind.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  max-width: none;
+}
+
+.container-heading {
+  margin-top: 100px;
+}
+
