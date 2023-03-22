@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/api', balanceRouter);
 app.use('/api', transactionsRouter);
 
-router.get('/', async (req: Request, res: Response) => {
+app.get('/', async (req: Request, res: Response) => {
   await initDb();
   res.status(200).send({
     message: 'Ethereum transactions list server!',
