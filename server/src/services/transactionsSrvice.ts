@@ -22,7 +22,7 @@ export const getTransactions = async (query: any) => {
   const conditionsList: any = {
     from: query.address,
     to: query.address,
-    hash: query.hash,
+    hash: query.transactionId,
     blockNumber: query.blockNumber,
   };
 

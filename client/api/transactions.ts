@@ -1,8 +1,6 @@
 import axios from 'axios';
 import config from './config/config';
 
-const { API_URL } = config;
-
 export const getTransactions = (setTransactions: any, params?: {
   limit?: number,
   skip?: number,
@@ -10,6 +8,8 @@ export const getTransactions = (setTransactions: any, params?: {
   transactionId?: string,
   blockNumber?: string,
 }) => {
+  const API_URL: any = process.env.API_URL || config.API_URL;
+
   axios.get(
       API_URL,
       {

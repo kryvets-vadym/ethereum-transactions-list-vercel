@@ -1,3 +1,3 @@
 export default {
-  API_URL: 'https://ethereum-transactions-list-vercel.vercel.app/api/transactions',
+  API_URL: 'http://localhost:5000/api/transactions',
 }
